@@ -26,13 +26,13 @@ const App = () => {
 	};
 
 	const sortProducts = (products, sortOption) => {
-		if (sortOption === 'name-asc') {
+		if (sortOption === 'A-Z') {
 			return [...products].sort((a, b) => a.name.localeCompare(b.name));
-		} else if (sortOption === 'name-desc') {
+		} else if (sortOption === 'Z-A') {
 			return [...products].sort((a, b) => b.name.localeCompare(a.name));
-		} else if (sortOption === 'price-asc') {
+		} else if (sortOption === '<') {
 			return [...products].sort((a, b) => a.prices.price - b.prices.price);
-		} else if (sortOption === 'price-desc') {
+		} else if (sortOption === '>') {
 			return [...products].sort((a, b) => b.prices.price - a.prices.price);
 		} else {
 			return products;
@@ -49,13 +49,13 @@ const App = () => {
 			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
 				<CategoryDropdown
 					categories={categories}
-					title={'Филтриране по категория'}
+					title={'Filtering by category'}
 					selectedCategory={selectedCategory}
 					onCategoryChange={setSelectedCategory}		
 				/>
 				<CategoryDropdown
-					categories={['name-asc', 'name-desc', 'price-asc', 'price-desc']}
-					title={'Сортиране'}
+					categories={['A-Z', 'Z-A', '<', '>']}
+					title={'Sorting'}
 					selectedCategory={sortOption}
 					onCategoryChange={handleSortChange}
 				/>
