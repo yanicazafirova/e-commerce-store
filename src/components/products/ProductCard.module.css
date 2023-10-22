@@ -1,0 +1,23 @@
+.show-more-button {
+    font-size: 14px;
+    color: #a7ccab;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.show-more-button:hover {
+    color: #0056b3;
+}
+
+.show-more-button.show-less {
+    color: #dc3545;
+}
+
+.show-more-button.show-less:hover {
+    color: #bd2130;
+}
