@@ -14,7 +14,6 @@ export const ProductCard = ({ product }) => {
     const shortDescription = product.short_description;
     const shouldShowMoreButton = shortDescription.length > 100;
 
-    console.log(product);
     return (
         <Card style={{ height: '100%', backgroundColor: '#e1f7e3' }}>
             <Card.Img variant="top" src={product.images[0]?.src} alt={product.name} style={{ height: '300px', width: '300px', objectFit: 'contain', display: 'block', margin: '0 auto' }} />
