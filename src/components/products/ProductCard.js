@@ -14,6 +14,7 @@ export const ProductCard = ({ product }) => {
     const shortDescription = product.short_description;
     const shouldShowMoreButton = shortDescription.length > 100;
 
+    console.log(product);
     return (
         <Card style={{ height: '100%', backgroundColor: '#e1f7e3' }}>
             <Card.Img variant="top" src={product.images[0]?.src} alt={product.name} style={{ height: '300px', width: '300px', objectFit: 'contain', display: 'block', margin: '0 auto' }} />
@@ -27,16 +28,17 @@ export const ProductCard = ({ product }) => {
                     <Button variant="button" onClick={handleToggleShowMore}
                         className={`${styles['show-more-button']} ${showMore ? styles['show-less'] : ''}`}
                         style={{
+                            marginTop: '-20px',
                             position: 'absolute',
                             right: '5px',
                         }}>
-                        {showMore ? 'Show Less' : 'Show More'}
+                        {showMore ? 'Скрий' : 'Още'}
                     </Button>
                 )}
                 <br/>
                 <br/>
-                <Card.Text>Category: {categories}</Card.Text>
-                <Card.Text>Price:
+                <Card.Text>Категории: {categories}</Card.Text>
+                <Card.Text>Цена:
                     {product.prices?.price}
                     {product.prices?.currency_symbol}
                 </Card.Text>

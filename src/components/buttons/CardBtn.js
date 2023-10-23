@@ -12,7 +12,7 @@ export const CardBtn = ({ productId }) => {
                 right: '5px',
             }}
             onClick={() => addToCart(productId)}>
-            Add To Cart
+            Добави
         </Button>
     );
 }

@@ -26,13 +26,13 @@ const App = () => {
 	};
 
 	const sortProducts = (products, sortOption) => {
-		if (sortOption === 'A-Z') {
+		if (sortOption === 'По азбучен ред A-Z') {
 			return [...products].sort((a, b) => a.name.localeCompare(b.name));
-		} else if (sortOption === 'Z-A') {
+		} else if (sortOption === 'По азбучен ред Z-A') {
 			return [...products].sort((a, b) => b.name.localeCompare(a.name));
-		} else if (sortOption === '<') {
+		} else if (sortOption === 'От най-ниска цена') {
 			return [...products].sort((a, b) => a.prices.price - b.prices.price);
-		} else if (sortOption === '>') {
+		} else if (sortOption === 'От най-висока цена') {
 			return [...products].sort((a, b) => b.prices.price - a.prices.price);
 		} else {
 			return products;
@@ -51,13 +51,13 @@ const App = () => {
 					categories={categories}
 					title={'Filtering by category'}
 					selectedCategory={selectedCategory}
-					onCategoryChange={setSelectedCategory}		
+					onSelectedChange={setSelectedCategory}		
 				/>
 				<CategoryDropdown
-					categories={['A-Z', 'Z-A', '<', '>']}
+					categories={['По азбучен ред A-Z', 'По азбучен ред Z-A', 'От най-ниска цена', 'От най-висока цена']}
 					title={'Sorting'}
 					selectedCategory={sortOption}
-					onCategoryChange={handleSortChange}
+					onSelectedChange={handleSortChange}
 				/>
 			</div>
 			<Row style={{ paddingTop: '60px' }}>
